@@ -50,33 +50,35 @@
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <h1 class="header-title">Gemma Reina Lara — Narrativa</h1>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="videojuegos.html">Videojuegos</a>
-        <a href="https://github.com/GemReina" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://chxana.itch.io/" target="_blank" rel="noopener">itch.io</a>
-      </nav>
-      <div class="lang">
-        <label for="lang">Idioma:</label>
-        <select id="lang" aria-label="Selector de idioma">
-          <option value="es" selected>Español (España)</option>
-          <option value="en">English (UK)</option>
-          <option value="ca">Català</option>
-        </select>
-      </div>
+  <div class="header-inner">
+    <h1 id="header-title" class="header-title">Gemma Reina Lara — Narrativa</h1>
+    <nav>
+      <a href="index.html" id="nav-inicio">Inicio</a>
+      <a href="sobre-mi.html" id="nav-sobremi">Sobre mí</a>
+      <a href="videojuegos.html" id="nav-videojuegos">Videojuegos</a>
+      <a href="https://github.com/GemReina" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://chxana.itch.io/" target="_blank" rel="noopener">itch.io</a>
+    </nav>
+    <div class="lang">
+      <label for="lang-select" id="label-idioma">Idioma:</label>
+      <select id="lang-select" aria-label="Selector de idioma">
+        <option value="es" selected>Español (España)</option>
+        <option value="en">English</option>
+        <option value="ca">Català</option>
+      </select>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <div class="tabs">
-      <div class="tab-button active" onclick="openTab('destellos')">Destellos en el horizonte</div>
-      <div class="tab-button" onclick="openTab('link')">A Link to You</div>
-      <div class="tab-button" onclick="openTab('guardian')">Guardian of the Breath</div>
-      <div class="tab-button" onclick="openTab('momo')">Momo’s Monster Motel</div>
-    </div>
+<section>
+  <div class="tabs">
+    <div id="tab-destellos" class="tab-button active" onclick="openTab('destellos')">Destellos en el horizonte</div>
+    <div id="tab-link" class="tab-button" onclick="openTab('link')">A Link to You</div>
+    <div id="tab-guardian" class="tab-button" onclick="openTab('guardian')">Guardian of the Breath</div>
+    <div id="tab-momo" class="tab-button" onclick="openTab('momo')">Momo’s Monster Motel</div>
+  </div>
+</section>
+
 
     <!-- Destellos en el horizonte -->
     <div id="destellos" class="tab-content active narrativa">
@@ -1019,5 +1021,31 @@ MOMO: …Right now.
       event.target.classList.add('active');
     }
   </script>
+  <script>
+  async function loadLanguage(lang) {
+    const res = await fetch('lang.json');
+    const data = await res.json();
+    const t = data[lang];
+
+    document.title = t.docTitleNarrativa;
+    document.getElementById('header-title').textContent = t.headerTitleNarrativa;
+    document.getElementById('nav-inicio').textContent = t.navInicio;
+    document.getElementById('nav-sobremi').textContent = t.navSobreMi;
+    document.getElementById('nav-videojuegos').textContent = t.navVideojuegos;
+    document.getElementById('label-idioma').textContent = t.labelIdioma;
+
+    document.getElementById('tab-destellos').textContent = t.tabDestellos;
+    document.getElementById('tab-link').textContent = t.tabLink;
+    document.getElementById('tab-guardian').textContent = t.tabGuardian;
+    document.getElementById('tab-momo').textContent = t.tabMomo;
+  }
+
+  document.getElementById('lang-select').addEventListener('change', (e) => {
+    loadLanguage(e.target.value);
+  });
+
+  loadLanguage('es');
+</script>
+
 </body>
 </html>

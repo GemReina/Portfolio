@@ -57,67 +57,68 @@
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <h1 class="header-title">Gemma Reina Lara — Videojuegos</h1>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="narrativa.html">Narrativa</a>
-        <a href="https://github.com/GemReina" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://chxana.itch.io/" target="_blank" rel="noopener">itch.io</a>
-      </nav>
-      <div class="lang">
-        <label for="lang">Idioma:</label>
-        <select id="lang" aria-label="Selector de idioma">
-          <option value="es" selected>Español (España)</option>
-          <option value="en">English (UK)</option>
-          <option value="ca">Català</option>
-        </select>
-      </div>
+  <div class="header-inner">
+    <h1 id="header-title" class="header-title">Gemma Reina Lara — Videojuegos</h1>
+    <nav>
+      <a href="index.html" id="nav-inicio">Inicio</a>
+      <a href="sobre-mi.html" id="nav-sobremi">Sobre mí</a>
+      <a href="narrativa.html" id="nav-narrativa">Narrativa</a>
+      <a href="https://github.com/GemReina" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://chxana.itch.io/" target="_blank" rel="noopener">itch.io</a>
+    </nav>
+    <div class="lang">
+      <label for="lang-select" id="label-idioma">Idioma:</label>
+      <select id="lang-select" aria-label="Selector de idioma">
+        <option value="es" selected>Español (España)</option>
+        <option value="en">English</option>
+        <option value="ca">Català</option>
+      </select>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <div class="tabs">
-      <div class="tab-button active" onclick="openTab('link')">A Link to You</div>
-      <div class="tab-button" onclick="openTab('momo')">Momo's Monster Motel</div>
-      <div class="tab-button" onclick="openTab('guardian')">Guardian of the Breadth</div>
-    </div>
+<section>
+  <div class="tabs">
+    <div id="tab-link" class="tab-button active" onclick="openTab('link')">A Link to You</div>
+    <div id="tab-momo" class="tab-button" onclick="openTab('momo')">Momo's Monster Motel</div>
+    <div id="tab-guardian" class="tab-button" onclick="openTab('guardian')">Guardian of the Breadth</div>
+  </div>
 
-    <!-- A Link to You -->
-    <div id="link" class="tab-content active">
-      <h2 class="game-title"><a href="https://hermeteus.itch.io/a-link-to-you" target="_blank">A Link to You</a></h2>
-      <img src="images/a-link-to-you.png" alt="A Link to You screenshot" class="game-img">
-      <p>
-        En este proyecto desarrollé tanto la parte narrativa como una pequeña técnica. Escribí la historia completa y todos los diálogos, 
-        asegurando coherencia emocional y ritmo dramático. Además, programé la introducción del juego en Unity. Mi rol fue un tanto híbrido: diseñadora narrativa y pequeña programadora, lo que me permitió 
-        unir guion y jugabilidad en una experiencia cohesiva.
-      </p>
-    </div>
+  <!-- A Link to You -->
+  <div id="link" class="tab-content active">
+    <h2 id="title-link" class="game-title">
+      <a href="https://hermeteus.itch.io/a-link-to-you" target="_blank">A Link to You</a>
+    </h2>
+    <img src="images/a-link-to-you.png" alt="A Link to You screenshot" class="game-img">
+    <p id="desc-link">
+      En este proyecto desarrollé tanto la parte narrativa como una pequeña técnica. Escribí la historia completa y todos los diálogos, asegurando coherencia emocional y ritmo dramático. Además, programé la introducción del juego en Unity. Mi rol fue un tanto híbrido: diseñadora narrativa y pequeña programadora, lo que me permitió unir guion y jugabilidad en una experiencia cohesiva.
+    
+    </p>
+  </div>
 
-    <!-- Momo's Monster Motel -->
-    <div id="momo" class="tab-content">
-      <h2 class="game-title"><a href="https://momos-monster-motel.itch.io/momos-monster-motel" target="_blank">Momo's Monster Motel</a></h2>
-      <img src="images/momos.webp" alt="Momo's Monster Motel screenshot" class="game-img">
-      <p>
-        En este juego universitario participé escribiendo las historias de varios personajes, incluyendo sus trasfondos y motivaciones. 
-        También programé la introducción y parte de las interacciones iniciales en Unreal Engine. Mi rol fue principalmente narrativo, 
-        pero con aportes técnicos para asegurar que los diálogos y eventos se integraran correctamente en el motor.
-      </p>
-    </div>
+  <!-- Momo's Monster Motel -->
+  <div id="momo" class="tab-content">
+    <h2 id="title-momo" class="game-title">
+      <a href="https://momos-monster-motel.itch.io/momos-monster-motel" target="_blank">Momo's Monster Motel</a>
+    </h2>
+    <img src="images/momos.webp" alt="Momo's Monster Motel screenshot" class="game-img">
+    <p id="desc-momo">
+      En este juego universitario participé escribiendo las historias de varios personajes, incluyendo sus trasfondos y motivaciones. También programé la introducción y parte de las interacciones iniciales en Unreal Engine. Mi rol fue principalmente narrativo, pero con aportes técnicos para asegurar que los diálogos y eventos se integraran correctamente en el motor.
+    </p>
+  </div>
 
-    <!-- Guardian of the Breath -->
-    <div id="guardian" class="tab-content">
-      <h2 class="game-title"><a href="https://guardian-of-the-breadth.itch.io/game" target="_blank">Guardian of the Breadth</a></h2>
-      <img src="images/guardian.avif" alt="Guardian of the Breath screenshot" class="game-img">
-      <p>
-        En este proyecto universitario escribí la historia completa y diseñé el sistema de diálogos. Además, programé un puzle 
-        de candado de combinación y la lógica narrativa que guía al jugador. Mi rol fue unir narrativa y mecánicas, asegurando 
-        que la historia se transmitiera a través de la jugabilidad.
-      </p>
-    </div>
+  <!-- Guardian of the Breadth -->
+  <div id="guardian" class="tab-content">
+    <h2 id="title-guardian" class="game-title">
+      <a href="https://guardian-of-the-breadth.itch.io/game" target="_blank">Guardian of the Breadth</a>
+    </h2>
+    <img src="images/guardian.avif" alt="Guardian of the Breath screenshot" class="game-img">
+    <p id="desc-guardian">
+      "En este proyecto universitario escribí la historia completa y diseñé el sistema de diálogos. Además, programé un puzle de candado de combinación y la lógica narrativa que guía al jugador. Mi rol fue unir narrativa y mecánicas, asegurando que la historia se transmitiera a través de la jugabilidad.
+    </p>
+  </div>
+</section>
 
-  </section>
 
   <script>
     function openTab(tabId) {
@@ -129,5 +130,42 @@
       event.target.classList.add('active');
     }
   </script>
+  <script>
+  async function loadLanguage(lang) {
+    const res = await fetch('lang.json');
+    const data = await res.json();
+    const t = data[lang];
+
+    // Título del documento y header
+    document.title = t.docTitleVideojuegos;
+    document.getElementById('header-title').textContent = t.headerTitleVideojuegos;
+
+    // Navegación
+    document.getElementById('nav-inicio').textContent = t.navInicio;
+    document.getElementById('nav-sobremi').textContent = t.navSobreMi;
+    document.getElementById('nav-narrativa').textContent = t.navNarrativa;
+    document.getElementById('label-idioma').textContent = t.labelIdioma;
+
+    // Pestañas
+    document.getElementById('tab-link').textContent = t.tabLink;
+    document.getElementById('tab-momo').textContent = t.tabMomo;
+    document.getElementById('tab-guardian').textContent = t.tabGuardian;
+
+    // Títulos y descripciones de juegos
+    document.getElementById('title-link').textContent = t.titleLink;
+    document.getElementById('desc-link').textContent = t.descLink;
+    document.getElementById('title-momo').textContent = t.titleMomo;
+    document.getElementById('desc-momo').textContent = t.descMomo;
+    document.getElementById('title-guardian').textContent = t.titleGuardian;
+    document.getElementById('desc-guardian').textContent = t.descGuardian;
+  }
+
+  document.getElementById('lang-select').addEventListener('change', (e) => {
+    loadLanguage(e.target.value);
+  });
+
+  loadLanguage('es'); // idioma por defecto
+</script>
+
 </body>
 </html>
