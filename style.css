@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@700&family=Indie+Flower&display=swap');
 
 :root {
   --bg-paper: #fdfaf4;
@@ -15,6 +15,15 @@
 
 body {
   background-color: var(--bg-paper);
+  /* Fondo tipo cuaderno con rayas horizontales y margen rojo */
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      var(--bg-paper),
+      var(--bg-paper) 28px,
+      #e8e4da 29px
+    ),
+    linear-gradient(to right, #d97a7a 60px, transparent 60px);
   font-family: 'Courier Prime', monospace;
   color: var(--ink);
   margin: 0;
@@ -76,17 +85,18 @@ nav a:hover {
   border: 1px solid var(--accent);
 }
 
+/* Secciones como hojas con sombra */
 main, section {
   padding: 40px;
   margin: 30px auto;
   max-width: var(--maxw);
   background: var(--bg-card);
-  border: 1px solid var(--accent);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  border: 2px dotted var(--accent); /* borde punteado tipo hoja */
+  box-shadow: 6px 6px 0px #d9d4c7; /* sombra tipo papel */
 }
 
 h1, h2 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Indie Flower', cursive; /* estilo manuscrito */
   color: var(--header-bg);
   margin-top: 0;
 }
@@ -134,15 +144,26 @@ a:hover {
   white-space: pre-line;
 }
 
-/* Tarjetas de proyecto */
+/* Tarjetas de proyecto con esquina doblada */
 .card {
+  position: relative;
   border: 1px dashed var(--accent);
   padding: 16px;
   margin: 16px 0;
   background: #fffefb;
 }
 
-/* Footer simple (opcional) */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 20px 20px;
+  border-style: solid;
+  border-color: transparent transparent #d9d4c7 transparent;
+}
+
+/* Footer simple */
 footer {
   text-align: center;
   color: #777;
