@@ -83,10 +83,15 @@
   }
 
   document.getElementById('lang-select').addEventListener('change', (e) => {
-    loadLanguage(e.target.value);
-  });
+  const selectedLang = e.target.value;
+  localStorage.setItem('lang', selectedLang); // guarda el idioma
+  loadLanguage(selectedLang);
+});
 
-  loadLanguage('es'); // idioma por defecto
+  const savedLang = localStorage.getItem('lang') || 'es';
+  document.getElementById('lang-select').value = savedLang;
+  loadLanguage(savedLang);
+
 </script>
 
 </body>
