@@ -32,6 +32,7 @@
     "descMomo": "En este juego universitario participé escribiendo las historias de varios personajes, incluyendo sus trasfondos y motivaciones. También programé la introducción y parte de las interacciones iniciales en Unreal Engine. Mi rol fue principalmente narrativo, pero con aportes técnicos para asegurar que los diálogos y eventos se integraran correctamente en el motor.",
     "titleGuardian": "Guardian of the Breadth",
     "descGuardian": "En este proyecto universitario escribí la historia completa y diseñé el sistema de diálogos. Además, programé un puzle de candado de combinación y la lógica narrativa que guía al jugador. Mi rol fue unir narrativa y mecánicas, asegurando que la historia se transmitiera a través de la jugabilidad.",
+    "visitarJuego": "Visitar juego",
 
     "docTitleNarrativa": "Narrativa — Gemma Reina Lara",
     "headerTitleNarrativa": "Gemma Reina Lara — Narrativa",
@@ -70,6 +71,7 @@
     "descMomo": "In this university game I participated by writing the stories of several characters, including their backgrounds and motivations. I also programmed the introduction and part of the initial interactions in Unreal Engine. My role was mainly narrative, but with technical contributions to ensure that dialogues and events were correctly integrated into the engine.",
     "titleGuardian": "Guardian of the Breadth",
     "descGuardian": "In this university project I wrote the complete story and designed the dialogue system. In addition, I programmed a combination lock puzzle and the narrative logic that guides the player. My role was to merge narrative and mechanics, ensuring that the story was conveyed through gameplay.",
+    "visitarJuego": "Visit game",
 
     "docTitleNarrativa": "Narrative — Gemma Reina Lara",
     "headerTitleNarrativa": "Gemma Reina Lara — Narrative",
@@ -108,6 +110,7 @@
     "descMomo": "En aquest joc universitari vaig participar escrivint les històries de diversos personatges, incloent els seus trasfons i motivacions. També vaig programar la introducció i part de les interaccions inicials en Unreal Engine. El meu rol va ser principalment narratiu, però amb aportacions tècniques per assegurar que els diàlegs i esdeveniments s'integressin correctament al motor.",
     "titleGuardian": "Guardian of the Breadth",
     "descGuardian": "En aquest projecte universitari vaig escriure la història completa i vaig dissenyar el sistema de diàlegs. A més, vaig programar un trencaclosques de pany de combinació i la lògica narrativa que guia el jugador. El meu rol va ser unir narrativa i mecàniques, assegurant que la història es transmetés a través de la jugabilitat." ,
+    "visitarJuego": "Visitar joc",
     
     "docTitleNarrativa": "Narrativa — Gemma Reina Lara",
     "headerTitleNarrativa": "Gemma Reina Lara — Narrativa",

@@ -36,13 +36,19 @@
     .game-title {
       font-family: 'Merriweather', serif;
       color: #3b2f2f;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+      text-align: center;
     }
-    .game-title a {
+    .game-link {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .game-link a {
       color: #3b2f2f;
       text-decoration: none;
+      font-weight: bold;
     }
-    .game-title a:hover {
+    .game-link a:hover {
       text-decoration: underline;
       color: #a67c52;
     }
@@ -86,9 +92,10 @@
 
     <!-- A Link to You -->
     <div id="link" class="tab-content active">
-      <h2 id="title-link" class="game-title">
-        <a href="https://hermeteus.itch.io/a-link-to-you" target="_blank">A Link to You</a>
-      </h2>
+      <h2 id="title-link" class="game-title">A Link to You</h2>
+      <p class="game-link">
+        <a id="link-link" href="https://hermeteus.itch.io/a-link-to-you" target="_blank">Visitar juego</a>
+      </p>
       <img src="images/a-link-to-you.png" alt="A Link to You screenshot" class="game-img">
       <p id="desc-link">
         En este proyecto desarrollé tanto la parte narrativa como una pequeña técnica. Escribí la historia completa y todos los diálogos, asegurando coherencia emocional y ritmo dramático. Además, programé la introducción del juego en Unity. Mi rol fue un tanto híbrido: diseñadora narrativa y pequeña programadora, lo que me permitió unir guion y jugabilidad en una experiencia cohesiva.
@@ -97,9 +104,10 @@
 
     <!-- Momo's Monster Motel -->
     <div id="momo" class="tab-content">
-      <h2 id="title-momo" class="game-title">
-        <a href="https://momos-monster-motel.itch.io/momos-monster-motel" target="_blank">Momo's Monster Motel</a>
-      </h2>
+      <h2 id="title-momo" class="game-title">Momo's Monster Motel</h2>
+      <p class="game-link">
+        <a id="momo-link" href="https://momos-monster-motel.itch.io/momos-monster-motel" target="_blank">Visitar juego</a>
+      </p>
       <img src="images/momos.webp" alt="Momo's Monster Motel screenshot" class="game-img">
       <p id="desc-momo">
         En este juego universitario participé escribiendo las historias de varios personajes, incluyendo sus trasfondos y motivaciones. También programé la introducción y parte de las interacciones iniciales en Unreal Engine. Mi rol fue principalmente narrativo, pero con aportes técnicos para asegurar que los diálogos y eventos se integraran correctamente en el motor.
@@ -108,9 +116,10 @@
 
     <!-- Guardian of the Breadth -->
     <div id="guardian" class="tab-content">
-      <h2 id="title-guardian" class="game-title">
-        <a href="https://guardian-of-the-breadth.itch.io/game" target="_blank">Guardian of the Breadth</a>
-      </h2>
+      <h2 id="title-guardian" class="game-title">Guardian of the Breadth</h2>
+      <p class="game-link">
+        <a id="guardian-link" href="https://guardian-of-the-breadth.itch.io/game" target="_blank">Visitar juego</a>
+      </p>
       <img src="images/guardian.avif" alt="Guardian of the Breath screenshot" class="game-img">
       <p id="desc-guardian">
         En este proyecto universitario escribí la historia completa y diseñé el sistema de diálogos. Además, programé un puzle de candado de combinación y la lógica narrativa que guía al jugador. Mi rol fue unir narrativa y mecánicas, asegurando que la historia se transmitiera a través de la jugabilidad.
@@ -149,6 +158,11 @@
       document.getElementById('tab-link').textContent = t.tabLink;
       document.getElementById('tab-momo').textContent = t.tabMomo;
       document.getElementById('tab-guardian').textContent = t.tabGuardian;
+
+    // Texto de los enlaces "Visitar juego"
+    document.getElementById('link-link').textContent = t.visitarJuego;
+    document.getElementById('momo-link').textContent = t.visitarJuego;
+    document.getElementById('guardian-link').textContent = t.visitarJuego;
 
       // Títulos y descripciones de juegos
       document.getElementById('title-link').textContent = t.titleLink;
