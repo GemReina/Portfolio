@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Videojuegos — Gemma Reina Lara</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #a67c52;
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      flex: 1;
+      padding: 12px;
+      cursor: pointer;
+      background: #fdfaf4;
+      border: 1px solid #a67c52;
+      border-bottom: none;
+      font-family: 'Courier Prime', monospace;
+      text-align: center;
+    }
+    .tab-button.active {
+      background: #fffdf8;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #a67c52;
+      background: #fffdf8;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .game-title {
+      font-family: 'Merriweather', serif;
+      color: #3b2f2f;
+      margin-bottom: 10px;
+    }
+    .game-title a {
+      color: #3b2f2f;
+      text-decoration: none;
+    }
+    .game-title a:hover {
+      text-decoration: underline;
+      color: #a67c52;
+    }
+    .game-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border: 2px solid #a67c52;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1 class="header-title">Gemma Reina Lara — Videojuegos</h1>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="narrativa.html">Narrativa</a>
+        <a href="https://github.com/GemReina" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://chxana.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      </nav>
+      <div class="lang">
+        <label for="lang">Idioma:</label>
+        <select id="lang" aria-label="Selector de idioma">
+          <option value="es" selected>Español (España)</option>
+          <option value="en">English (UK)</option>
+          <option value="ca">Català</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="tabs">
+      <div class="tab-button active" onclick="openTab('link')">A Link to You</div>
+      <div class="tab-button" onclick="openTab('momo')">Momo's Monster Motel</div>
+      <div class="tab-button" onclick="openTab('guardian')">Guardian of the Breadth</div>
+    </div>
+
+    <!-- A Link to You -->
+    <div id="link" class="tab-content active">
+      <h2 class="game-title"><a href="https://hermeteus.itch.io/a-link-to-you" target="_blank">A Link to You</a></h2>
+      <img src="images/a-link-to-you.png" alt="A Link to You screenshot" class="game-img">
+      <p>
+        En este proyecto desarrollé tanto la parte narrativa como una pequeña técnica. Escribí la historia completa y todos los diálogos, 
+        asegurando coherencia emocional y ritmo dramático. Además, programé la introducción del juego en Unity. Mi rol fue un tanto híbrido: diseñadora narrativa y pequeña programadora, lo que me permitió 
+        unir guion y jugabilidad en una experiencia cohesiva.
+      </p>
+    </div>
+
+    <!-- Momo's Monster Motel -->
+    <div id="momo" class="tab-content">
+      <h2 class="game-title"><a href="https://momos-monster-motel.itch.io/momos-monster-motel" target="_blank">Momo's Monster Motel</a></h2>
+      <img src="images/momos.webp" alt="Momo's Monster Motel screenshot" class="game-img">
+      <p>
+        En este juego universitario participé escribiendo las historias de varios personajes, incluyendo sus trasfondos y motivaciones. 
+        También programé la introducción y parte de las interacciones iniciales en Unreal Engine. Mi rol fue principalmente narrativo, 
+        pero con aportes técnicos para asegurar que los diálogos y eventos se integraran correctamente en el motor.
+      </p>
+    </div>
+
+    <!-- Guardian of the Breath -->
+    <div id="guardian" class="tab-content">
+      <h2 class="game-title"><a href="https://guardian-of-the-breadth.itch.io/game" target="_blank">Guardian of the Breadth</a></h2>
+      <img src="images/guardian.avif" alt="Guardian of the Breath screenshot" class="game-img">
+      <p>
+        En este proyecto universitario escribí la historia completa y diseñé el sistema de diálogos. Además, programé un puzle 
+        de candado de combinación y la lógica narrativa que guía al jugador. Mi rol fue unir narrativa y mecánicas, asegurando 
+        que la historia se transmitiera a través de la jugabilidad.
+      </p>
+    </div>
+
+  </section>
+
+  <script>
+    function openTab(tabId) {
+      const buttons = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
