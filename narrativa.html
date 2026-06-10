@@ -999,47 +999,61 @@ MOMO: …Right now.
   </script>
   <script>
   async function loadLanguage(lang) {
-    const res = await fetch('lang.json');
-    const data = await res.json();
-    const t = data[lang];
+    try {
+      const res = await fetch('lang.json');
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const data = await res.json();
+      const t = data[lang];
 
-    document.title = t.docTitleNarrativa;
-    document.getElementById('header-title').textContent = t.headerTitleNarrativa;
-    document.getElementById('nav-inicio').textContent = t.navInicio;
-    document.getElementById('nav-sobremi').textContent = t.navSobreMi;
-    document.getElementById('nav-videojuegos').textContent = t.navVideojuegos;
-    document.getElementById('label-idioma').textContent = t.labelIdioma;
+      if (!t) {
+        console.error(`Language '${lang}' not found in lang.json`);
+        return;
+      }
 
-    document.getElementById('tab-destellos').textContent = t.tabDestellos;
-    document.getElementById('tab-link').textContent = t.tabLink;
-    document.getElementById('tab-guardian').textContent = t.tabGuardian;
-    document.getElementById('tab-momo').textContent = t.tabMomo;
+      document.title = t.docTitleNarrativa;
+      document.getElementById('header-title').textContent = t.headerTitleNarrativa;
+      document.getElementById('nav-inicio').textContent = t.navInicio;
+      document.getElementById('nav-sobremi').textContent = t.navSobreMi;
+      document.getElementById('nav-videojuegos').textContent = t.navVideojuegos;
+      document.getElementById('label-idioma').textContent = t.labelIdioma;
 
-	document.getElementById('title-destellos').textContent = t.titleDestellos;
-	document.getElementById('destellosCap1Titulo').textContent = t.destellosCap1Titulo;
-	document.getElementById('destellosCap1Texto').textContent = t.destellosCap1Texto;
-	document.getElementById('destellosCap2Titulo').textContent = t.destellosCap2Titulo;
-	document.getElementById('destellosCap2Texto').textContent = t.destellosCap2Texto;
-	document.getElementById('destellosCap3Titulo').textContent = t.destellosCap3Titulo;
-	document.getElementById('destellosCap3Texto').textContent = t.destellosCap3Texto;
-	document.getElementById('destellosCap4Titulo').textContent = t.destellosCap4Titulo;
-	document.getElementById('destellosCap4Texto').textContent = t.destellosCap4Texto;
-	document.getElementById('destellosCap5Titulo').textContent = t.destellosCap5Titulo;
-	document.getElementById('destellosCap5Texto').textContent = t.destellosCap5Texto;
+      document.getElementById('tab-destellos').textContent = t.tabDestellos;
+      document.getElementById('tab-link').textContent = t.tabLink;
+      document.getElementById('tab-guardian').textContent = t.tabGuardian;
+      document.getElementById('tab-momo').textContent = t.tabMomo;
+
+      document.getElementById('title-destellos').textContent = t.titleDestellos;
+      document.getElementById('destellosCap1Titulo').textContent = t.destellosCap1Titulo;
+      document.getElementById('destellosCap1Texto').textContent = t.destellosCap1Texto;
+      document.getElementById('destellosCap2Titulo').textContent = t.destellosCap2Titulo;
+      document.getElementById('destellosCap2Texto').textContent = t.destellosCap2Texto;
+      document.getElementById('destellosCap3Titulo').textContent = t.destellosCap3Titulo;
+      document.getElementById('destellosCap3Texto').textContent = t.destellosCap3Texto;
+      document.getElementById('destellosCap4Titulo').textContent = t.destellosCap4Titulo;
+      document.getElementById('destellosCap4Texto').textContent = t.destellosCap4Texto;
+      document.getElementById('destellosCap5Titulo').textContent = t.destellosCap5Titulo;
+      document.getElementById('destellosCap5Texto').textContent = t.destellosCap5Texto;
+    } catch (error) {
+      console.error('Error loading language:', error);
+    }
   }
 
-  document.getElementById('lang-select').addEventListener('change', (e) => {
-  const selectedLang = e.target.value;
-  localStorage.setItem('lang', selectedLang); // guarda el idioma
-  loadLanguage(selectedLang);
-});
+  const langSelectElement = document.getElementById('lang-select');
+  if (langSelectElement) {
+    langSelectElement.addEventListener('change', (e) => {
+      const selectedLang = e.target.value;
+      localStorage.setItem('lang', selectedLang);
+      loadLanguage(selectedLang);
+    });
+  }
 
+  const savedLang = localStorage.getItem('lang') || 'es';
+  if (langSelectElement) {
+    langSelectElement.value = savedLang;
+  }
+  loadLanguage(savedLang);
 
-const savedLang = localStorage.getItem('lang') || 'es';
-document.getElementById('lang-select').value = savedLang;
-loadLanguage(savedLang);
-
-</script>
+  </script>
 
 </body>
 </html>
